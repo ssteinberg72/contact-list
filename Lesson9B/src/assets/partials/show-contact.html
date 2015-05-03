@@ -15,8 +15,8 @@
     </div>-->
 
 <article id="contact-list">
+	
 	<div ng-repeat="person in contacts">
-
 
 		<table border="1" cellpadding="0" cellpadding="0">
 
@@ -26,6 +26,7 @@
 				<td>Description</td>
 				<td>Telephone Number</td>
 				<td>Email</td>
+				<td>Action</td>
 			</tr>
 			<tr>
 			<td>{{person.firstName}}</td>	
@@ -33,6 +34,7 @@
 			<td>{{person.description}}</td>	
 			<td>{{person.telephoneNumber}}</td>	
 			<td>{{person.email}}</td>
+			<td><a ui-sref="edit-contact">Edit</a></td>
 			</tr>
 			</table>
 <!--<

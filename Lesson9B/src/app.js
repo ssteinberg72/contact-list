@@ -32,6 +32,21 @@ myApp.config( function( $stateProvider, $urlRouterProvider ) {
         $scope.items = ["A", "List", "Of", "Items"];
       }
     })
+    $stateProvider
+    .state('edit-contact', {
+      url: "/edit-contact",
+      templateUrl: "partials/edit-contact.html"
+    })
+    .state('edit-contact.list', {
+      url: "/list",
+      templateUrl: "partials/edit-contact.list.html",
+        $scope.isDisplaying = true;
+  $scope.onEditAction = function() {
+    if (!this.currentState.isEditing) {
+        this.isDisplaying = !this.isDisplaying;
+        this.currentState.isEditing = true;
+      }     
+    })
     .state('show-contact', {
       url: "/show-contact",
       templateUrl: "partials/show-contact.html"

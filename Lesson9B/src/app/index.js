@@ -12,6 +12,11 @@ myApp.config( function( $stateProvider, $urlRouterProvider ) {
       templateUrl: "assets/partials/add-contact.html",
       controller: 'ContactController'
     })
+    .state('edit-contact', {
+      url: "/edit-contact",
+      templateUrl: "assets/partials/edit-contact.html",
+        controller: "EditController" 
+    })
     .state('show-contact', {
       url: "/show-contact",
       templateUrl: "assets/partials/show-contact.html",
@@ -54,6 +59,12 @@ myApp.controller('ContactController', function($scope,ContactDTO,ContactService)
 });
 
 myApp.controller('ShowController', function($scope,ContactService) {
+
+ $scope.contacts = ContactService.contactsArray;
+
+});
+
+myApp.controller('EditController', function($scope,ContactService) {
 
  $scope.contacts = ContactService.contactsArray;
 
