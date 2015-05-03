@@ -1,0 +1,47 @@
+<h1>Show contact</h1>
+<hr/>
+<a ui-sref="add-contact">Add contact</a>
+
+<br><br>
+
+<a ui-sref="show-contact.list">Show List</a>
+<!-- <div ui-view></div> -->
+
+<!-- <ion-content scroll="false" class="padding-horizontal" has-header="true">
+    <div class="row padding-vertical">
+        <div class="col col-center text-center">
+            <span class="medium-text primary-text-color">Edit contact</span>
+        </div>
+    </div>-->
+
+<article id="contact-list">
+	<div ng-repeat="person in contacts">
+
+
+		<table border="1" cellpadding="0" cellpadding="0">
+
+			<tr>
+				<td>First Name</td>
+				<td>Last Name</td>
+				<td>Description</td>
+				<td>Telephone Number</td>
+				<td>Email</td>
+			</tr>
+			<tr>
+			<td>{{person.firstName}}</td>	
+			<td>{{person.lastName}}</td>	
+			<td>{{person.description}}</td>	
+			<td>{{person.telephoneNumber}}</td>	
+			<td>{{person.email}}</td>
+			</tr>
+			</table>
+<!--<
+			<button ng-click="save()" class="button button-full button-positive">
+        Save
+    </button>-->
+    <!--<button ng-click="delete(contactId)" class="button button-full button-assertive">
+        Delete
+    </button>-->				
+		
+	</div>
+</article>

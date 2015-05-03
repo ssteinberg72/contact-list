@@ -1,0 +1,14 @@
+<h1>add contact</h1>
+<hr>
+ <a href = "#"ui-sref="show-contact">Show List</a>
+<br><br>
+
+<form id="add-contact">
+	<input type="text" name="firstName" placeholder="first name" ng-model="person.firstName">
+	<input type="text" name="lastName" placeholder="last name" ng-model="person.lastName">
+	<input type="text" name="description" placeholder="description" ng-model="person.description">
+	<input type="tel" name="telephoneNumber" placeholder="telephone number" ng-model="person.telephoneNumber">
+	<input type="email" name="email" placeholder="email" ng-model="person.email">
+
+	<button ng-click="addContact()">Add Contact</button>
+</form> 
