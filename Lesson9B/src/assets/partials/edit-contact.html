@@ -12,7 +12,7 @@
 	<input type="tel" name="telephoneNumber" placeholder="telephone number" value="{{person.telephoneNumber}}" ng-model="person.telephoneNumber">
 	<input type="email" name="email" placeholder="email" value="{{person.email}}" ng-model="person.email">
 
-	<button ng-click="onEditAction()">Edit</button>
+	<button ng-click="onEditAction(person.id)">Edit</button>
 </form> 
            
 </div>
