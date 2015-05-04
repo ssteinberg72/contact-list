@@ -17,6 +17,14 @@ myApp.config( function( $stateProvider, $urlRouterProvider ) {
       templateUrl: "assets/partials/edit-contact.html",
         controller: "EditController" 
     })
+
+  .state('delete-contact', {
+      url: "/delete-contact",
+      templateUrl: "assets/partials/delete-contact.html",
+        controller: "DeleteController" 
+    })
+
+
     .state('show-contact', {
       url: "/show-contact",
       templateUrl: "assets/partials/show-contact.html",
@@ -37,6 +45,13 @@ myApp.service("ContactService",function() {
   this.addContact = function (person) {
     
     this.contactsArray.push(person);
+
+    console.log(this.contactsArray);
+  },
+
+  this.deleteContact = function (person) {
+    
+    this.contactsArray.splice(person);
 
     console.log(this.contactsArray);
   }
@@ -65,6 +80,12 @@ myApp.controller('ShowController', function($scope,ContactService) {
 });
 
 myApp.controller('EditController', function($scope,ContactService) {
+
+ $scope.contacts = ContactService.contactsArray;
+
+});
+
+myApp.controller('DeleteController', function($scope,ContactService) {
 
  $scope.contacts = ContactService.contactsArray;
 
